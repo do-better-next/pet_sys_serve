@@ -1,0 +1,5 @@
+pet:
+    db:
+        pd: root
+        img_url: C:\\Users\\Administrator\\Desktop\\image
+        host: localhost

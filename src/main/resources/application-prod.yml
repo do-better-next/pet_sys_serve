@@ -1,0 +1,5 @@
+pet:
+    db:
+        pd: root
+        img_url: /images/
+        host: 47.106.223.211

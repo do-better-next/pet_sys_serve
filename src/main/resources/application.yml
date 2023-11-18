@@ -1,0 +1,37 @@
+server:
+  port: 9090
+spring:
+  profiles:
+    active: prod
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://${pet.db.host}:3306/stray-animal?serverTimezone=GMT%2b8
+    username: root
+    password: ${pet.db.pd}
+  servlet:
+    multipart:
+      max-file-size: 100MB
+      max-request-size: 100MB
+mybatis:
+  mapper-locations: classpath:mapper/*.xml  #扫描所有mybatis的xml文件
+#  configuration:
+#    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+
+files:
+  upload:
+    path: ${pet.db.img_url}
+
+
+startURL:
+  start: https://webtlias-test.oss-cn-hangzhou.aliyuncs.com/
+#aliyun存储图片
+aliyun:
+  oss:
+    endpoint: https://oss-cn-hangzhou.aliyuncs.com
+    bucketName: webtlias-test
+    accessKeyId: LTAI5t9U7iTGLtqk3n6en5Z8
+    accessKeySecret: nTS7spm3NzlkTLHSz7rNfnHz4leyui
